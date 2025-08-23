@@ -1,5 +1,39 @@
+<!DOCTYPE html>
 <html>
-    <body>
-         lorem-ipsum-doo.github.io
-    </body>
+<head>
+    <title>lorem-ipsum-doo.github.io - Privacy Policy</title>
+    <script>
+        // Функция для определения предпочтительного языка пользователя
+        function getPreferredLanguage() {
+            const supportedLangs = ['ru', 'en']; // Список поддерживаемых языков
+            const userLang = navigator.language || navigator.userLanguage;
+            const primaryLang = userLang.split('-')[0]; // Извлекаем основной код языка (например, 'ru' из 'ru-RU')
+            
+            // Проверяем, поддерживается ли язык
+            if (supportedLangs.includes(primaryLang)) {
+                return primaryLang;
+            }
+            // Возвращаем язык по умолчанию (английский)
+            return 'en';
+        }
+
+        // Перенаправляем на соответствующую версию
+        const userLanguage = getPreferredLanguage();
+        if (userLanguage === 'ru') {
+            window.location.href = '/privacy-policy/ru/privacy-policy.html';
+        } else {
+            window.location.href = '/privacy-policy/en/privacy-policy.html';
+        }
+    </script>
+</head>
+<body>    
+    <noscript>
+        <p>Please enable JavaScript or choose your language:</p>
+        <ul>
+            <li><a href="/privacy-policy/en/privacy-policy.html">Privacy-Policy - English Version</a></li>
+            <li><a href="/privacy-policy/ru/privacy-policy.html">Политика Конфиденциальности - Русская версия</a></li>
+        </ul>
+    </noscript>
+    <p>Redirecting to the appropriate language version...</p>
+</body>
 </html>
